@@ -1,0 +1,64 @@
+(base) jfrey@jordans-mbp youtube_corey_schafer % python test_calc.py
+(base) jfrey@jordans-mbp youtube_corey_schafer % python -m unnittest test_calc.py
+/Users/jfrey/opt/anaconda3/bin/python: No module named unnittest
+(base) jfrey@jordans-mbp youtube_corey_schafer % python -m unittest test_calc.py 
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+(base) jfrey@jordans-mbp youtube_corey_schafer % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
