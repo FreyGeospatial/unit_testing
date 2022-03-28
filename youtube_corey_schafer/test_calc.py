@@ -15,6 +15,23 @@ class TestCalc(unittest.TestCase): # when creating a class, we can inherit metho
     def test_add(self): # MUST have prefix test_ ...followed by the method describing what we wanna test
         result = calc.add(10, 5)
         self.assertEqual(result, 15)
+        
+  ###################################################################   
+    def add_test(self): # example of test that would NOT run due to \
+                        # improper prefix (does not start with "test_").
+                        # See terminal output- this will not show up
+        result = calc.add(10, 5)
+        self.assertEqual(result, 15)
+  ###################################################################
+    
+    def test_addFail(self): # example of failed test
+        result = calc.add(10, 5)
+        self.assertEqual(result, 999)
+        
+ ####################################################################
+ 
+    def test_subtract(self):
+        self.assertEqual(calc.subtract(10, 5), 5)
     
 # we could run this test using just
 # python -m unittest test_calc.py
