@@ -14,3 +14,9 @@ class TestCalc(unittest.TestCase): # when creating a class, we can inherit metho
         result = calc.add(10, 5)
         self.assertEqual(result, 15)
     
+# we could run this test using just
+# python -m unittest test_calc.py
+# the "-m" command imports a module or package
+# for you, and then runs the package(?) as a 
+# script. See here: https://stackoverflow.com/questions/22241420/execution-of-python-code-with-m-option-or-not
+
