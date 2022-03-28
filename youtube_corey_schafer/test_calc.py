@@ -22,6 +22,7 @@ class TestCalc(unittest.TestCase): # when creating a class, we can inherit metho
                         # See terminal output- this will not show up
         result = calc.add(10, 5)
         self.assertEqual(result, 15)
+        
   ###################################################################
     
     def test_addFail(self): # example of failed test
@@ -32,6 +33,13 @@ class TestCalc(unittest.TestCase): # when creating a class, we can inherit metho
  
     def test_subtract(self):
         self.assertEqual(calc.subtract(10, 5), 5)
+        
+  ####################################################################  
+    
+    def test_divide(self):
+        self.assertEqual(calc.divide(5, 2), 2.5)
+        self.assertRaises(ValueError, calc.divide, 10, 0) # tests to see if our value error exception is raised
+        
     
 # we could run this test using just
 # python -m unittest test_calc.py
