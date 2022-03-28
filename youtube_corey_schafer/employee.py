@@ -13,7 +13,7 @@ class Employee:
         self.last = last
         self.pay = pay
 
-    @property
+    @property # @ symbol is a decorator. see here: https://wiki.python.org/moin/PythonDecorators
     def email(self):
         return '{}.{}@email.com'.format(self.first, self.last)
 

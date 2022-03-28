@@ -7,20 +7,20 @@ from employee import Employee
 
 class TestEmployee(unittest.TestCase):
 
-    @classmethod
+    @classmethod # runs before every single test, automatically!
     def setUpClass(cls):
         print('setupClass')
 
-    @classmethod
+    @classmethod # runs after every single test, automatically!
     def tearDownClass(cls):
         print('teardownClass')
 
-    def setUp(self):
+    def setUp(self): # runs before every single test, automatically!
         print('setUp')
         self.emp_1 = Employee('Corey', 'Schafer', 50000)
         self.emp_2 = Employee('Sue', 'Smith', 60000)
 
-    def tearDown(self):
+    def tearDown(self): # runs after every single test, automatically!
         print('tearDown\n')
 
     def test_email(self):
