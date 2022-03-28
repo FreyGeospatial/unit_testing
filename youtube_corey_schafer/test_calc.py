@@ -1,6 +1,8 @@
 import os
 import unittest
 
+# https://www.youtube.com/watch?v=6tNS--WetLI
+
 #os.getcwd()
 #os.chdir("youtube_corey_schafer")
 
@@ -20,3 +22,14 @@ class TestCalc(unittest.TestCase): # when creating a class, we can inherit metho
 # for you, and then runs the package(?) as a 
 # script. See here: https://stackoverflow.com/questions/22241420/execution-of-python-code-with-m-option-or-not
 
+# to run the test using $ python test_calc.py,
+# or even from within our editor (Spyder in my case),
+# we need to perform an initial code set up- see below:
+
+# if we run this module directly, then run the code
+# within the conditional, which is unittest.main().
+# AND... unittest.main() will run all of our tests.
+# After inserting this code, $ python test_calc.py
+# should run our test just fine. And it does!
+if __name__ == '__main__':
+    unittest.main() 
