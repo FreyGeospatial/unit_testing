@@ -24,6 +24,12 @@ def test_dont_care_if_fails() -> None:
 def test_with_custom_mark() -> None:
     pass
 
+def test_blah() -> None:
+    print("blah")
+
+def test_blah2() -> None:
+    return "blah"
+
 class Company:
     def __init__(self, name: str, stock_symbol: str):
         self.name = name,
@@ -45,3 +51,18 @@ def company() -> Company: # type annotations...returns a company instance
 # for the test function(?)
 def test_with_ficture(company: Company) -> None: # type annotations...returns None type. Takes a company fixture/instance 
     print(f"printing {company} from fixture")
+    
+# run $ pytest . -v for verbose terminal output (which test files and test functions are being run)
+# run $ pytest . -v no:warnings to remove warnings from terminal output
+# run $ pytest . -v no:warnings -s to also print the test function output
+
+# parametrization allows us to pass variable inputs to test functions
+@pytest.mark.parametrize(
+    "company_name", # the first thing we want to do is supply variable arguments to the "comapny_name" parameter
+    ["TikTok", "Instagram", "Twitch"], # these are the variable inputs we will supply... so there will be 3 test runs of this function
+    ids=["TIKTOK TEST", "INSTAGRAM TEST", "TWITCH TEST"] # optional labels for input
+)
+
+# ** note that the name of the parametrize marker above^^^ is the same as the parameter for the tested function below
+def test_parametrized(company_name:str) -> None:
+    print(f"\nTest with {company_name}")
