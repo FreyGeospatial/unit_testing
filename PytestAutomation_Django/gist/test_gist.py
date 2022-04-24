@@ -23,3 +23,25 @@ def test_dont_care_if_fails() -> None:
 @pytest.mark.slow
 def test_with_custom_mark() -> None:
     pass
+
+class Company:
+    def __init__(self, name: str, stock_symbol: str):
+        self.name = name,
+        self.stock_symbol = stock_symbol
+    
+    def __str__(self):
+        return f"{self.name}:{self.stock_symbol}"
+
+# a fixture is a function that we can use to return anything we want. By
+# marking this function as a fixture, we are telling PyTest that we may 
+# run this before or after our TEST FUNCTIONS  . Can also pass fixtures into other
+# functions.
+@pytest.fixture
+def company() -> Company: # type annotations...returns a company instance
+    return Company(name="Fiver", stock_symbol="FVRR") # returns a company instance with name and stock symbol
+
+# if pytest finds a FIXTURE^^^ with the matching name of an argument to send to a function (below), 
+# Pytest will execute that function before(?) and puts the output of that function as the argument 
+# for the test function(?)
+def test_with_ficture(company: Company) -> None: # type annotations...returns None type. Takes a company fixture/instance 
+    print(f"printing {company} from fixture")
